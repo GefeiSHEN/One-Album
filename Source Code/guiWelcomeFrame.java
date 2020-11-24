@@ -11,13 +11,17 @@ import java.awt.event.ActionEvent;
 public class guiWelcomeFrame extends JFrame implements ActionListener{
 	
 	private JPanel guidePanel;
-	public JLabel welcomeLabel;
-	public JButton welcomeButton;	
+	private JLabel welcomeLabel;
+	private JButton welcomeButton;	
 	
 	public Font titleFont;
 	
 	protected guiWelcomeFrame() {
 		super();
+		
+		this.setLayout(new BorderLayout());
+		this.setBounds(100,100,400,400);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		guidePanel = new JPanel();
 		welcomeLabel = new JLabel("本地智能备份 杜绝隐私泄漏");
@@ -37,7 +41,7 @@ public class guiWelcomeFrame extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String buttonCommand = e.getActionCommand();
-		if (e.equals("让我们开始吧"))
+		if (buttonCommand.equals("让我们开始吧"))
 			this.dispose();
 	}
 	
